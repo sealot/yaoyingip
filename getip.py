@@ -1,6 +1,8 @@
 import requests
 import regex
-
+from os import system 
+import time
+ 
 
 
 session=requests.session()
@@ -24,3 +26,8 @@ ip=pattern2.findall(html2)
 
 with open('ip.txt','w') as f:
     f.write(ip[0])
+	
+	
+system('git add .')
+system('git commit -m %s' % time.strftime("%Y%m%d%H%M%S", time.localtime()))
+system('git push origin master')
